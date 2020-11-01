@@ -17,12 +17,12 @@ MERN stack is the idea of using Javascript/Node for fullstack web development.
 
 ## clone or download
 ```terminal
-$ git clone https://github.com/amazingandyyy/mern.git
+$ git clone https://github.com/wirthdrewneu/AppTrack.git
 $ npm i
 ```
 
 ## project structure
-```terminal
+<!-- ```terminal
 LICENSE
 package.json
 server/
@@ -31,7 +31,7 @@ server/
 client/
    package.json
 ...
-```
+``` -->
 
 # Usage (run fullstack app on your machine)
 
@@ -44,7 +44,6 @@ notice, you need client and server runs concurrently in different terminal sessi
 
 ## Client-side usage(PORT: 3000)
 ```terminal
-$ cd client   // go to client folder
 $ npm i       // npm install pacakges
 $ npm run dev // run it locally
 
