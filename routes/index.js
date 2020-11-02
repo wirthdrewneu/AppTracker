@@ -36,5 +36,11 @@ router.post("/delappevent", async (req, res) => {
 });
 
 
+router.post("/updateappevent", async (req, res) => {
+	const post = req.body;
+	await myDB.updateAppEvent(post);
+	res.redirect("/");
+});
+
 
 module.exports = router;

@@ -11,12 +11,12 @@ function EventForm(props){
     return(    
 
       <div className = "align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <div class="card-deck mb-3 text-center">
-    <div class="card mb-6 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Add Stage</h4>
+      <div className="card-deck mb-3 text-center">
+    <div className="card mb-6 shadow-sm">
+      <div className="card-header">
+        <h4 className="my-0 font-weight-normal">Add Stage</h4>
       </div>
-      <div class="card-body">
+      <div className="card-body">
          <form action="/createappevent" method="Post">
         <div className="form-group row">
           <label for="company" className="col-10 control-label" style={{"textAlign": "left"}}>Company</label>
@@ -59,14 +59,14 @@ function EventForm(props){
       </form>
       </div>
     </div>
-    <div class="card mb-6 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Event Details</h4>
+    <div className="card mb-6 shadow-sm">
+      <div className="card-header">
+        <h4 className="my-0 font-weight-normal">Event Details</h4>
       </div>
-      <div class="card-body">
+      <div className="card-body">
 
 
- <form action="/delappevent" method="Post">
+ <form action="/updateappevent" method="Post">
         <input className="form-control" type="text" value ={props.eventdata._id} id="_id" name="_id"/>
         <div className="form-group row">
           <label for="company" className="col-10 control-label" style={{"textAlign": "left"}}>Company</label>
@@ -80,21 +80,21 @@ function EventForm(props){
         <div className="form-group row">
           <label for="appliedDate" className="col-10 control-label" style={{"textAlign": "left"}}>Start Date</label>
           <div className="col-10">
-            <input className="form-control" value = {props.eventdata.start} type="date"  id="appliedDate1" name="start" />
+            <input className="form-control" placeholder = {props.eventdata.start} type="date"  id="appliedDate1" name="start" />
           </div>
         </div>
 
       <div className="form-group row">
           <label for="appliedDate" className="col-10 control-label" style={{"textAlign": "left"}}>End Date</label>
           <div className="col-10">
-            <input className="form-control" type="date"  id="appliedDate2" name="end" value = {props.eventdata.end} />
+            <input className="form-control" type="date"  id="appliedDate2" name="end" placeholder = {props.eventdata.end} />
           </div>
         </div>
 
         <div className="form-group row">
           <label for="stage" className="col-10 control-label" style={{"textAlign": "left"}}>Stage</label>
           <div className="col-10">
-            <select className="form-control" id="stage" name="Stage" value = {props.eventdata.Stage}>
+            <select className="form-control" id="stage" name="Stage" placeholder = {props.eventdata.Stage}>
               <option>Applied/Apply</option>
               <option>Application Deadline</option>
               <option>Online Assessment</option>
