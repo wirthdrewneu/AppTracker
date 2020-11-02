@@ -1,9 +1,8 @@
 import React from "react";
 /*import { render } from "react-dom";*/
 
-function AppForm(){
-    return(    
-
+function AppForm () {
+  return(    
       <div class = "align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 
       <form action="" method="">

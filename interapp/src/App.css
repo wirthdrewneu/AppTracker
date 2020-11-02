@@ -1,1 +1,8 @@
-   
+   .limitText {
+        /* display: block; */
+        max-height: 50px;
+        max-width: 100px;
+        overflow: scroll;
+        white-space: nowrap;
+        /* text-overflow: ellipsis; */
+   }

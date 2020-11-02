@@ -2,21 +2,22 @@ import React, { useState, useEffect } from "react" ;
 import './App.css';
 import NavBar from "./NavBar.js";
 import AppCalendar from "./AppCalendar.js";
-import History from "./History.js";
+// import History from "./History.js";
+import ApplicationsTable from "./components/ApplicationsTable";
 import AppForm from "./AppForm.js";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 
 function App() {
 
-  const [show, setShow] = useState(true);
-  const [invites, setinvites] = useState([]);
+  // const [show, setShow] = useState(true);
+  // const [invites, setinvites] = useState([]);
 
   const getInv = async () => {
     console.log("getting Inv");
@@ -47,10 +48,10 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <History />
+          <Route path="/appliedHistory">
+            <ApplicationsTable />
           </Route>
-          <Route path="/users">
+          <Route path="/newApplication">
             <AppForm />
           </Route>
           <Route path="/">

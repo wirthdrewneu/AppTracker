@@ -1,11 +1,11 @@
-import React, { useState } from "react" ;
+import React from "react" ;
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 
 function NavBar(){
@@ -14,9 +14,10 @@ return(
   <h5 class="my-0 mr-md-auto font-weight-normal">AppTrack</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="/">Calendar</a>
-    <a class="p-2 text-dark" href="/users">Enter Application</a>
-    <a class="p-2 text-dark" href="/about">History</a>
+    <a class="p-2 text-dark" href="/newApplication">Enter Application</a>
+    <a class="p-2 text-dark" href="/appliedHistory">History</a>
   </nav>
-</div>);
+</div>
+);
 }
 export default NavBar;
