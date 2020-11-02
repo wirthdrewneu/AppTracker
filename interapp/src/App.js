@@ -16,8 +16,8 @@ import {
 
 function App() {
 
-  // const [show, setShow] = useState(true);
-  // const [invites, setinvites] = useState([]);
+  const [show, setShow] = useState(true);
+  const [invites, setinvites] = useState([]);
 
   const getInv = async () => {
     console.log("getting Inv");
