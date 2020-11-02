@@ -33,8 +33,42 @@ function myDB() {
 		return await jobposts.insert(post);
 	};
 
+	myDB.createAppEvent = async (post) => {
+		const client = new MongoClient(uri);
+		await client.connect();
+		const db = client.db("jobapps");
+		const jobposts = db.collection("jobcalendar");
+		return await jobposts.insert(post);
+	};
 
+	myDB.delAppEvent = async (post) => {
+		console.log("Post_id", post.title);
+		const client = new MongoClient(uri);
+		await client.connect();
+		const db = client.db("jobapps");
+		const jobposts = db.collection("jobcalendar");
+		var myquery = { "title" : post.title};
+		console.log( "jobpostquery",jobposts.find(myquery));
+		return await jobposts.deleteOne(myquery);
+	};
 	
+
+	myDB.updateAppEvent = async (post) => {
+		console.log("Post_id", post.title);
+		const client = new MongoClient(uri);
+		await client.connect();
+		const db = client.db("jobapps");
+		const jobposts = db.collection("jobcalendar");
+		var myquery = { "title" : post.title};
+		var newvalues = { $set: {"title": post.title, "start": post.start, "end":post.end} };
+		console.log( "jobpostquery",jobposts.find(myquery));
+		return await jobposts.updateOne(myquery,newvalues);
+	};
+
+/*
+	v
+  dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
+*/	
 	/*return [
 			{
 				Stage: "Online Assesment",

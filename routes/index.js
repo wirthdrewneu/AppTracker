@@ -22,5 +22,25 @@ router.post("/appform", async (req, res) => {
 	res.redirect("/");
 });
 
+router.post("/createappevent", async (req, res) => {
+	const post = req.body;
+	await myDB.createAppEvent(post);
+	res.redirect("/");
+});
+
+
+router.post("/delappevent", async (req, res) => {
+	const post = req.body;
+	await myDB.delAppEvent(post);
+	res.redirect("/");
+});
+
+
+router.post("/updateappevent", async (req, res) => {
+	const post = req.body;
+	await myDB.updateAppEvent(post);
+	res.redirect("/");
+});
+
 
 module.exports = router;

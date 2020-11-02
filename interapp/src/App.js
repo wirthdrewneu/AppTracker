@@ -24,7 +24,7 @@ function App() {
     try {
       const _invites = await fetch("/calendar").then((res) => res.json());
       console.log("got posts", _invites);
-     /* setPosts(_posts);*/
+      setinvites(_invites);
     } catch (err) {
       console.log("error ", err);
     }
@@ -34,7 +34,7 @@ function App() {
     getInv();
   }, [])  
 
-
+console.log("render App", invites);
   return (
 
     <div className="App">
@@ -55,7 +55,7 @@ function App() {
             <AppForm />
           </Route>
           <Route path="/">
-         <AppCalendar />
+         <AppCalendar invites = {invites}/>
           </Route>
         </Switch>
     </Router>
