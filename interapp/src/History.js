@@ -3,8 +3,8 @@ import React from "react";
 
 function History(){
     return( 
-      <div class = "align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <p class="h4 mb-4">Application Details</p>
+      <div className = "align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <p className ="h4 mb-4">Application Details</p>
       <div id="applicationsData"></div>
     </div>
  ); }

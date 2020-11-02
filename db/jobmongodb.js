@@ -33,7 +33,21 @@ function myDB() {
 		return await jobposts.insert(post);
 	};
 
+	myDB.createAppEvent = async (post) => {
+		const client = new MongoClient(uri);
+		await client.connect();
+		const db = client.db("jobapps");
+		const jobposts = db.collection("jobcalendar");
+		return await jobposts.insert(post);
+	};
 
+	myDB.delAppEvent = async (post) => {
+		const client = new MongoClient(uri);
+		await client.connect();
+		const db = client.db("jobapps");
+		const jobposts = db.collection("jobcalendar");
+		return await jobposts.remove(post);
+	};
 	
 	/*return [
 			{
