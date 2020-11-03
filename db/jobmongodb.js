@@ -22,7 +22,7 @@ function myDB() {
 		const jobposts = db.collection("jobposts");
 		const query = {};
 		console.log(jobposts.find(query).toArray());
-		return jobposts.find(query).sort({_id: -1}).toArray();
+		return jobposts.find(query).sort({ _id: -1 }).toArray();
 	};
 
 	myDB.createAppPost = async (post) => {
@@ -48,8 +48,8 @@ function myDB() {
 		await client.connect();
 		const db = client.db("jobapps");
 		const jobposts = db.collection("jobcalendar");
-		var myquery = { "title" : post.title};
-		console.log( "jobpostquery",jobposts.find(myquery));
+		var myquery = { title: post.title };
+		console.log("jobpostquery", jobposts.find(myquery));
 		return await jobposts.deleteOne(myquery);
 	};
 
@@ -59,11 +59,11 @@ function myDB() {
 		await client.connect();
 		const db = client.db("jobapps");
 		const jobposts = db.collection("jobposts");
-		var myquery = { "_id" : ObjectId(post._id)};
+		var myquery = { _id: ObjectId(post._id) };
 		// console.log( "jobpostquery", jobposts.find(myquery));
 		let dbResponse = {
 			success: true,
-			message: "Record Deleted Successfully"
+			message: "Record Deleted Successfully",
 		};
 		try {
 			await jobposts.deleteOne(myquery);
@@ -71,28 +71,29 @@ function myDB() {
 			console.log(error);
 			dbResponse = {
 				success: false,
-				message: error
+				message: error,
 			};
 			return dbResponse;
 		}
 		return dbResponse;
 	};
-	
+
 	myDB.updateAppEvent = async (post) => {
 		console.log("Post_id", post.title);
 		const client = new MongoClient(uri);
 		await client.connect();
 		const db = client.db("jobapps");
 		const jobposts = db.collection("jobcalendar");
-		var myquery = { "title" : post.title};
-		var newvalues = { $set: {"title": post.title, "start": post.start, "end":post.end} };
-		console.log( "jobpostquery",jobposts.find(myquery));
-		return await jobposts.updateOne(myquery,newvalues);
+		var myquery = { title: post.title };
+		var newvalues = {
+			$set: { title: post.title, start: post.start, end: post.end },
+		};
+		console.log("jobpostquery", jobposts.find(myquery));
+		return await jobposts.updateOne(myquery, newvalues);
 	};
 
-
 	//   dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
-	
+
 	/*return [
 			{
 				Stage: "Online Assesment",
@@ -118,5 +119,3 @@ function myDB() {
 module.exports = myDB();
 
 // Replace the uri string with your MongoDB deployment's connection string.
-
-
