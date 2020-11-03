@@ -54,7 +54,7 @@ function AppForm ({edit, itemDetails}) {
         <div className="form-group row">
           <label for="appliedDate" className="col-10 col-form-label">Date Applied</label>
           <div className="col-10">
-            <input className="form-control" type="date" value="2020-10-27" id="appliedDate" name="DateApplied" />
+            <input className="form-control" type="date" id="appliedDate" name="DateApplied" />
           </div>
         </div>
         <div className="form-group row">
