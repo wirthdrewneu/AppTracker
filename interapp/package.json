@@ -48,6 +48,5 @@
     "lodash": "^4.17.20",
     "react-bootstrap": "^1.4.0",
     "react-router-dom": "^5.2.0"
-  },
-  "proxy": "http://localhost:3001"
+  }
 }
