@@ -4,7 +4,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import EventForm from "./EventForm.js";
-moment.locale("en-ca");
+moment.locale("en-hi");
 const localizer = momentLocalizer(moment);
 //empty object for now
 

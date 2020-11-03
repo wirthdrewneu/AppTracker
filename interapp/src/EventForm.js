@@ -7,7 +7,6 @@ import "./form.css";
 function EventForm(props){
  console.log("Event form" , props.eventdata);
 
-
     return(    
 
       <div className = "align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -67,7 +66,7 @@ function EventForm(props){
 
 
  <form action="/updateappevent" method="Post">
-        <input className="form-control" type="text" value ={props.eventdata._id} id="_id" name="_id"/>
+       
         <div className="form-group row">
           <label for="company" className="col-10 control-label" style={{"textAlign": "left"}}>Company</label>
           <div className="col-10">
@@ -105,9 +104,32 @@ function EventForm(props){
         </div>
 
         
-        <button type="submit" className="btn btn-lg btn-block btn-outline-primary">Delete</button>
+        <button type="submit" className="btn btn-lg btn-block btn-outline-primary">Update</button>
       </form>
         
+      <form>
+            
+        <button type="submit"  onClick = {async (evt) => {
+        
+    
+    const response = await fetch("/delappevent", {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify({title : props.eventdata.title}) // body data type must match "Content-Type" header
+  });
+         
+
+          }
+
+        }
+
+
+         className="btn btn-lg btn-block btn-outline-primary">Delete</button>
+      </form>
 
       
       </div>
