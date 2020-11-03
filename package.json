@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -18,5 +23,8 @@
     "eslint-plugin-react": "^7.21.5",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
