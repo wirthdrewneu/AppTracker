@@ -17,7 +17,7 @@ export default function Pagination(props) {
                     {
                         pages.map(page => (
                             <li class={page === currentPage ? "page-item active" : "page-item"} key={page}>
-                                <a class="page-link" onClick={() => {onPageChange(page)}} href>
+                                <a class="page-link" onClick={() => {onPageChange(page)}}>
                                     {page}
                                 </a>
                             </li>

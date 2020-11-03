@@ -19,7 +19,8 @@ router.get("/applications", async (req, res, next) => {
 router.post("/appform", async (req, res) => {
 	const post = req.body;
 	await myDB.createAppPost(post);
-	res.redirect("/");
+	res.redirect("/appliedHistory");
+	res.send({message: "Application Added"});
 });
 
 router.post("/createappevent", async (req, res) => {
@@ -33,6 +34,13 @@ router.post("/delappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.delAppEvent(post);
 	res.redirect("/");
+});
+
+router.post("/delAppPost", async (req, res) => {
+	const post = req.body;
+	const dbResponse = await myDB.delApplication(post);
+	res.send(dbResponse);
+	// res.redirect("/");
 });
 
 

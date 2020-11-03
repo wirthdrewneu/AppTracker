@@ -52,7 +52,7 @@ console.log("render App", invites);
             <ApplicationsTable />
           </Route>
           <Route path="/newApplication">
-            <AppForm />
+            <AppForm edit={false} itemDetails={null} />
           </Route>
           <Route path="/">
          <AppCalendar invites = {invites}/>

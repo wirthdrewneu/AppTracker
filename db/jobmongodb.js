@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 
 function myDB() {
 	const myDB = {};
@@ -26,6 +26,7 @@ function myDB() {
 	};
 
 	myDB.createAppPost = async (post) => {
+		console.log("created post:", post);
 		const client = new MongoClient(uri);
 		await client.connect();
 		const db = client.db("jobapps");
@@ -51,8 +52,32 @@ function myDB() {
 		console.log( "jobpostquery",jobposts.find(myquery));
 		return await jobposts.deleteOne(myquery);
 	};
-	
 
+	myDB.delApplication = async (post) => {
+		console.log("Post_id", post._id, post.Company);
+		const client = new MongoClient(uri);
+		await client.connect();
+		const db = client.db("jobapps");
+		const jobposts = db.collection("jobposts");
+		var myquery = { "_id" : ObjectId(post._id)};
+		// console.log( "jobpostquery", jobposts.find(myquery));
+		let dbResponse = {
+			success: true,
+			message: "Record Deleted Successfully"
+		};
+		try {
+			await jobposts.deleteOne(myquery);
+		} catch (error) {
+			console.log(error);
+			dbResponse = {
+				success: false,
+				message: error
+			};
+			return dbResponse;
+		}
+		return dbResponse;
+	};
+	
 	myDB.updateAppEvent = async (post) => {
 		console.log("Post_id", post.title);
 		const client = new MongoClient(uri);
@@ -65,10 +90,9 @@ function myDB() {
 		return await jobposts.updateOne(myquery,newvalues);
 	};
 
-/*
-	v
-  dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
-*/	
+
+	//   dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
+	
 	/*return [
 			{
 				Stage: "Online Assesment",

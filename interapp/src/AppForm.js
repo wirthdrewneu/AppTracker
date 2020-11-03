@@ -1,17 +1,36 @@
-import React from "react";
-/*import { render } from "react-dom";*/
+import React, { useState, useEffect } from "react";
 
-function AppForm(){
-    return(    
 
+function AppForm ({edit, itemDetails}) {
+  const [url, setUrl] = useState("/appform");
+  const [fields, setFields] = useState({
+    Company: "",
+    DateApplied: "",
+    JobDescription: "",
+    RecruiterInfo: "",
+    Role: "",
+    Stage: "",
+    StageDate: "",
+    Type: ""
+  });
+
+  useEffect(() => {
+    if (edit) {
+      setFields(itemDetails);
+      setUrl("/updateApplication")
+    }
+  }, []);
+  
+  
+
+  return(    
       <div className = "align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-
-      <form action="" method="">
-      <p className="h4 mb-4">Add application</p>
+      <form action={url} method="POST">
+        <p className="h4 mb-4">Add application</p>
         <div className="form-group row">
           <label for="company" className="col-10 col-form-label" >Company</label>
           <div className="col-10">
-            <input className="form-control" type="text" id="company" name="Company"/>
+            <input className="form-control" type="text" id="company" name="Company" value={fields.Company}/>
           </div>
         </div>
         <div className="form-group row">
@@ -55,7 +74,7 @@ function AppForm(){
         <div className="form-group row">
           <label for="stage" className="col-10 col-form-label">Next Due Date</label>
           <div className="col-10">
-            <input className="form-control" type="date" value="2020-10-27" id="stage" name="StageDate" />
+            <input className="form-control" type="date" id="stage" name="StageDate" />
           </div>
         </div>
         <div className="form-group row">
@@ -65,6 +84,7 @@ function AppForm(){
           </div>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
+        <input className="form-control" type="ID" value="" id="stage" name="StageDate" />
       </form>
     </div>);
 
