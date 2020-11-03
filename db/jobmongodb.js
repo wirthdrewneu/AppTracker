@@ -3,7 +3,8 @@ const { MongoClient, ObjectId } = require("mongodb");
 function myDB() {
 	const myDB = {};
 
-	const uri = process.env.MONGO_URL || "mongodb://localhost:27017";
+	// const uri = process.env.MONGO_URL || "mongodb://localhost:27017";
+	const uri = "mongodb://harman:pass@cluster0.zk2xm.mongodb.net/test";
 
 	myDB.getCaldata = async () => {
 		const client = new MongoClient(uri);
