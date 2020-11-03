@@ -9,5 +9,5 @@ npm-debug.log
 .passport.js
 .DS_Store
 
-build/
+# build/
 dist/
