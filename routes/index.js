@@ -26,28 +26,27 @@ router.post("/appform", async (req, res) => {
 router.post("/createappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.createAppEvent(post);
-	res.redirect("/");
+	res.send({message: "Event Created"});
 });
 
 
 router.post("/delappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.delAppEvent(post);
-	res.redirect("/");
+	res.send({message: "Event Deleted"});
 });
 
 router.post("/delAppPost", async (req, res) => {
 	const post = req.body;
 	const dbResponse = await myDB.delApplication(post);
 	res.send(dbResponse);
-	// res.redirect("/");
 });
 
 
 router.post("/updateappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.updateAppEvent(post);
-	res.redirect("/");
+	res.send({message: "Event Updated"});
 });
 
 
