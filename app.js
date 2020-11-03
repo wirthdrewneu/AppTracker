@@ -19,7 +19,7 @@ app.use("/", indexRouter);
 
 app.use(express.static(path.join(__dirname, "./interapp/build")));
 app.get("*", (request, response) => {
-	response.sendFile(path.join(__dirname, "./interapp/build", "index.html"));
+	response.sendFile(path.join(__dirname, "./interapp/build/index.html"));
 }); 
 
 module.exports = app;
