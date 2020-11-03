@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react" ;
 import './App.css';
-import NavBar from "./NavBar.js";
+import NavBar from "./components/NavBar.js";
 import AppCalendar from "./components/AppCalendar.js";
 // import History from "./History.js";
 import ApplicationsTable from "./components/ApplicationsTable";
