@@ -102,8 +102,8 @@ https://johnguerra.co/classes/webDevelopment_fall_2020/
 ## Project Objective:
 Build a Web application using  MongoDB, Express, Node 
 ## Screenshots:
-![](images/Home.png)
-![](images/Hobbies.png)
+![](images/crud.png)
+![](images/calendar.png)
 
 
 
