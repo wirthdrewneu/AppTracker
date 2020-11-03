@@ -13,13 +13,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "interapp/build")));
 
 app.use("/", indexRouter);
-// app.get("/*", function(req,res){
-// 	res.sendFile(path.join(__dirname,"interapp/build","index.html"));
-// });
+app.get("/*", function(req,res){
+	res.sendFile(path.join(__dirname,"interapp/build","index.html"));
+});
 
-app.use(express.static(path.join(__dirname, "./interapp/build")));
-app.get("*", (request, response) => {
-	response.sendFile(path.join(__dirname, "./interapp/build/index.html"));
-}); 
+// app.use(express.static(path.join(__dirname, "./interapp/build")));
+// app.get("*", (request, response) => {
+// 	response.sendFile(path.join(__dirname, "./interapp/build/index.html"));
+// }); 
 
 module.exports = app;
