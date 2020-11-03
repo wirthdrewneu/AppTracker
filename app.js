@@ -13,5 +13,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "interapp/build")));
 
 app.use("/", indexRouter);
+app.get("/*", function(req,res){
+	res.sendFile(path.join(__dirname,"interapp/build","index.html"));
+});
 
 module.exports = app;
