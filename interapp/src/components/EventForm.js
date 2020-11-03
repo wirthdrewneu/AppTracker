@@ -1,6 +1,6 @@
 import React from "react";
 /*import { render } from "react-dom";*/
-import "./form.css";
+import "../css/form.css";
 
 
 

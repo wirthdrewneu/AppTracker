@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+td {
+    padding: 14px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+}
+
+.outer {
+    position:relative;
+    height: 22px;
+}
+
+.inner {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    margin: auto;
+    top: 0;
+    bottom:0;
+}

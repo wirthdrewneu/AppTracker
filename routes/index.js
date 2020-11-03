@@ -26,6 +26,7 @@ router.post("/appform", async (req, res) => {
 router.post("/createappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.createAppEvent(post);
+	res.redirect("/");
 	res.send({message: "Event Created"});
 });
 
@@ -33,6 +34,7 @@ router.post("/createappevent", async (req, res) => {
 router.post("/delappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.delAppEvent(post);
+	res.redirect("/");
 	res.send({message: "Event Deleted"});
 });
 

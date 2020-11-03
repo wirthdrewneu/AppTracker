@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react" ;
 import './App.css';
 import NavBar from "./NavBar.js";
-import AppCalendar from "./AppCalendar.js";
+import AppCalendar from "./components/AppCalendar.js";
 // import History from "./History.js";
 import ApplicationsTable from "./components/ApplicationsTable";
-import AppForm from "./AppForm.js";
+import AppForm from "./components/AppForm.js";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-   Link
+  //  Link
 } from "react-router-dom";
 
 
 function App() {
 
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   const [invites, setinvites] = useState([]);
 
   const getInv = async () => {
@@ -34,19 +34,10 @@ function App() {
     getInv();
   }, [])  
 
-console.log("render App", invites);
   return (
-
     <div className="App">
     <NavBar></NavBar>
-
-
-
     <Router>
-   
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/appliedHistory">
             <ApplicationsTable />
@@ -55,7 +46,7 @@ console.log("render App", invites);
             <AppForm edit={false} itemDetails={null} />
           </Route>
           <Route path="/">
-         <AppCalendar invites = {invites}/>
+            <AppCalendar invites = {invites}/>
           </Route>
         </Switch>
     </Router>
