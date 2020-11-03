@@ -17,9 +17,9 @@ app.use(express.static(path.join(__dirname, "interapp/build")));
 // 	res.sendFile(path.join(__dirname,"interapp/build","index.html"));
 // });
 
-app.use(express.static(path.join(__dirname, "./reactapp/build")));
+app.use(express.static(path.join(__dirname, "./interapp/build")));
 app.get("*", (request, response) => {
-	response.sendFile(path.join(__dirname, "./reactapp/build", "index.html"));
+	response.sendFile(path.join(__dirname, "./interapp/build", "index.html"));
 }); 
 
 module.exports = app;
