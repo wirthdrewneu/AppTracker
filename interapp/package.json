@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "mdbreact": "^4.27.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-big-calendar": "^0.28.1",
@@ -41,8 +42,11 @@
     "@babel/core": "^7.12.3",
     "@fullcalendar/core": "^5.3.1",
     "@fullcalendar/daygrid": "^5.3.2",
+    "bootstrap": "^4.5.3",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.20",
+    "react-bootstrap": "^1.4.0",
     "react-router-dom": "^5.2.0"
   },
-"proxy" :"http://localhost:3001"
-
+  "proxy": "http://localhost:3001"
 }

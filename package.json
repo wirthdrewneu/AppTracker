@@ -1,6 +1,6 @@
 {
   "name": "jobapplicationtracker",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
@@ -19,5 +19,4 @@
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2"
   }
-
 }

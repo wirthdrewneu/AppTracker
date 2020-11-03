@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react" ;
 import './App.css';
 import NavBar from "./NavBar.js";
 import AppCalendar from "./AppCalendar.js";
-import History from "./History.js";
+// import History from "./History.js";
+import ApplicationsTable from "./components/ApplicationsTable";
 import AppForm from "./AppForm.js";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 
@@ -47,11 +48,11 @@ console.log("render App", invites);
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <History />
+          <Route path="/appliedHistory">
+            <ApplicationsTable />
           </Route>
-          <Route path="/users">
-            <AppForm />
+          <Route path="/newApplication">
+            <AppForm edit={false} itemDetails={null} />
           </Route>
           <Route path="/">
          <AppCalendar invites = {invites}/>
