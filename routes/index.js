@@ -48,6 +48,7 @@ router.post("/delAppPost", async (req, res) => {
 router.post("/updateappevent", async (req, res) => {
 	const post = req.body;
 	await myDB.updateAppEvent(post);
+	res.redirect("/");
 	res.send({message: "Event Updated"});
 });
 
