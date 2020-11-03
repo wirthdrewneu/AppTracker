@@ -30,7 +30,7 @@ function AppForm ({edit, itemDetails}) {
         <div className="form-group row">
           <label for="company" className="col-10 col-form-label" >Company</label>
           <div className="col-10">
-            <input className="form-control" type="text" id="company" name="Company" value={fields.Company}/>
+            <input className="form-control" type="text" id="company" name="Company"/>
           </div>
         </div>
         <div className="form-group row">
