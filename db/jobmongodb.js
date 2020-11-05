@@ -6,6 +6,7 @@ function myDB() {
 	//From MongoDB atlas:
 
 	// const MongoClient = require('mongodb').MongoClient;
+	//it seems like you expose your mongoDB credentials 
 	const uri = "mongodb+srv://harman:pass@cluster0.zk2xm.mongodb.net/<dbname>?retryWrites=true&w=majority";
 	// const client = new MongoClient(uri, { useNewUrlParser: true });
 	// client.connect(err => {
