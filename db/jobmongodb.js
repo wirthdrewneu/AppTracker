@@ -1,5 +1,9 @@
 const { MongoClient, ObjectId } = require("mongodb");
 
+//I like the way your type your code, it is super clear for me to understand.
+//and the way you named each functions is wonderful, for example getCaldata tells me that this is a function extracting data from MongoDB.
+//the layout your code is awesome, i have nothing to complain. 
+
 function myDB() {
 	const myDB = {};
 
