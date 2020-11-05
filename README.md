@@ -42,6 +42,10 @@ client/
 
 notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
 
+First thing first, i really like the idea of this project. It is definitely useful, and i am pretty sure it attracts a lof of users who are looking for a job.
+I also like the design of the web, i am into the calendar.  The sample style makes users easy to use, no need to instruct users how to use.
+
+It seems like the instructions to install is misleading. I've done git clone, and cd the folder where the code being stored following the instruction you guys mentioned, there are some weird error. Plus, the URL to heroku does not work. Overall, nice job, it is amazing, i like this project.
 ## Client-side usage(PORT: 3000)
 ```terminal
 $ npm i       // npm install pacakges
